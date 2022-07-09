@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/githubIssueTrackerFragment">
+
+    <fragment
+        android:id="@+id/githubIssueTrackerFragment"
+        android:name="com.githubrequests.ui.fragments.GithubRequestsFragment"
+        android:label="fragment_issue_tracker_dashboard"
+        tools:layout="@layout/fragment_github_requests">
+
+        <action
+            android:id="@+id/action_myGithubRequestsFragment_to_myGithubRequestDetailFragment"
+            app:destination="@id/githubIssueTrackerDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/githubIssueTrackerDetailFragment"
+        android:name="com.githubrequests.ui.fragments.GithubRequestDetailFragment"
+        android:label="github_request_detail"
+        tools:layout="@layout/fragment_github_request_detail">
+        <argument
+            android:name="arg_1"
+            app:argType="com.githubrequests.api.model.GithubPullRequestsResponse" />
+
+    </fragment>
+
+</navigation>
