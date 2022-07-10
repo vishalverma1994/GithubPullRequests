@@ -24,7 +24,7 @@ class GithubRequestsViewModel @Inject constructor(
     private val errorChannel = Channel<Failure>()
     val errorEventFlow = errorChannel.receiveAsFlow()
 
-    // flow for the all currencies supported
+    // flow for the pull requests
     private val successFlow = MutableStateFlow<Success>(Success.Idle)
     val successEventFlow = successFlow.asStateFlow()
 
